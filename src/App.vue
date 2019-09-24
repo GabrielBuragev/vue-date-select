@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <DateSelect
+      v-model="date"
+      dateFormat="mm.dd.yyyy"
+      :yearRange="[1990, 2019]"
+      :startDay="1"
+      :startMonth="6"
+      :startYear="1990"
+      locale="de_DE"
+    ></DateSelect>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import DateSelect from "./components/DateSelect.vue";
+import * as whatever from "../dist/vue-dateselect.umd";
+console.log(whatever);
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    DateSelect
+  },
+  data() {
+    return {
+      date: {}
+    };
   }
-}
+};
 </script>
 
-<style lang="scss">
+<style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  height: 30px;
+}
+html {
+  background-color: gray;
 }
 </style>

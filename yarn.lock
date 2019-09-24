@@ -1547,6 +1547,11 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bezier-easing@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.1.0.tgz#c04dfe8b926d6ecaca1813d69ff179b7c2025d86"
+  integrity sha1-wE3+i5JtbsrKGBPWn/F5t8ICXYY=
+
 bfj@^6.1.1:
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/bfj/-/bfj-6.1.2.tgz#325c861a822bcb358a41c78a33b8e6e2086dde7f"
@@ -5351,6 +5356,11 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
+mobile-device-detect@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/mobile-device-detect/-/mobile-device-detect-0.2.3.tgz#292fbd1f9b32654cce511c555b80d637f5df70ee"
+  integrity sha512-trhb/kQYb05qF2RQJJOa164DPlFHwl+MF3vngV7kUwTrTRgdv8pheWIhWCpabqwxTDaboATsQXTrq7kEiawI7A==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -8302,6 +8312,11 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.0.tgz#bd76d6a23323e2ca8ffa12028dc04559c75f9019"
   integrity sha512-iq+S7vZJE60yejDYM0ek6zg308+UZsdtPExWP9VZoCFCz1zkJoXFnAX7aZfd/ZwrkidzdUZL0C/ryW+JwAiIGw==
 
+vue-dragscroll@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/vue-dragscroll/-/vue-dragscroll-1.10.0.tgz#418254f6c18664af681a262c3a38d9643c1e045f"
+  integrity sha512-i58v8ubaUqoVKdRcMlWp7OYEpuKCZnJnq2CHzOVCAwtAQr53PifDc0FJDGvCQGVMKH3+6ELztsAm1HiLzq3a2A==
+
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
@@ -8341,6 +8356,13 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-scrollto@^2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/vue-scrollto/-/vue-scrollto-2.15.0.tgz#e6e4645dfd2efc0d960123f607c2ab448b81670a"
+  integrity sha512-FmJncIrXvsqvyVAN55Trc2CQWVDyxuMgdQQp1Q9I9bhoEi7XXpvXXQonhbFBktzNggJf1rpfHpVqa8KLhPeePQ==
+  dependencies:
+    bezier-easing "2.1.0"
 
 vue-style-loader@^4.1.0:
   version "4.1.2"
