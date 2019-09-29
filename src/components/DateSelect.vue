@@ -23,6 +23,7 @@
           ref="daysList"
           :style="listStyles.daysList"
           v-model="value.day"
+          :dragscrollEnabled="dragscroll"
         ></DateSelectList>
         <DateSelectList
           name="months"
@@ -33,6 +34,7 @@
           :style="listStyles.monthsList"
           v-model="value.month"
           value-type="index"
+          :dragscrollEnabled="dragscroll"
         ></DateSelectList>
         <DateSelectList
           name="years"
@@ -42,6 +44,7 @@
           ref="yearsList"
           :style="listStyles.yearsList"
           v-model="value.year"
+          :dragscrollEnabled="dragscroll"
         ></DateSelectList>
 
         <div class="focused-liner"></div>
@@ -51,8 +54,8 @@
 </template>
 
 <script>
-import DateSelectList from "./DateSelectList";
-import months from "../assets/data/months";
+import DateSelectList from "./DateSelectList.vue";
+import months from "../assets/data/months.js";
 export default {
   components: {
     DateSelectList
@@ -96,13 +99,17 @@ export default {
     hasError: {
       type: Boolean,
       default: false
+    },
+    dragscroll: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
     return {
       dropdownVisible: false,
-      slotDeterminationRegex: /^(.*)[-/\.\s](.*)[-/\.\s](.{0,4})$/,
-      separatorDeterminationRegex: /^.*([-/\.\s]).*([-/\.\s]).{0,4}$/,
+      slotDeterminationRegex: /^(.*)[-/.\s](.*)[-/.\s](.{0,4})$/,
+      separatorDeterminationRegex: /^.*([-/.\s]).*([-/.\s]).{0,4}$/,
       defaultSeparator: ["-", "-"]
     };
   },
@@ -144,14 +151,12 @@ export default {
     },
     daysComputed: function() {
       var y = this.year,
-        m = this.month,
-        d = this.day;
-
-      if (m == null) var mlength = 31;
+        m = this.month;
+      let mlength;
+      if (m == null) mlength = 31;
       else if (m === "02")
-        var mlength = 28 + (!(y & 3) && (y % 100 !== 0 || !(y & 15)));
-      else
-        var mlength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1];
+        mlength = 28 + (!(y & 3) && (y % 100 !== 0 || !(y & 15)));
+      else mlength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1];
 
       var days = [];
       while (days.length != mlength) days[days.length] = days.length + 1;

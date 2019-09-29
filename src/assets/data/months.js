@@ -1,4 +1,4 @@
-{
+export default {
   "de_DE": [
     "Januar",
     "Februar",

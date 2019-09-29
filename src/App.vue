@@ -2,20 +2,19 @@
   <div id="app">
     <DateSelect
       v-model="date"
-      dateFormat="mm.dd.yyyy"
+      dateFormat="dd.mm.yyyy"
       :yearRange="[1990, 2019]"
-      :startDay="1"
+      :startDay="6"
       :startMonth="6"
-      :startYear="1990"
+      :startYear="2000"
       locale="de_DE"
+      :dragscroll="false"
     ></DateSelect>
   </div>
 </template>
 
 <script>
 import DateSelect from "./components/DateSelect.vue";
-import * as whatever from "../dist/vue-dateselect.umd";
-console.log(whatever);
 export default {
   name: "app",
   components: {

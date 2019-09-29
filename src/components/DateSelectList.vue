@@ -5,13 +5,13 @@
       :id="name + '-dropdown'"
       ref="list"
       tabindex="-1"
-      v-dragscroll="dragscrollSupported"
+      v-dragscroll="!isMobile && dragscrollEnabled"
       @scroll="!clickActive && !dragscrollActive && scrolled($event);"
       @mousedown="mousewheelTriggered"
       @touchstart="mousewheelTriggered"
       @touchmove="mousewheelTriggered"
       @dragscrollmove="onDragscrollMove"
-      @dragscrollend="selectByScrollPos()"
+      @dragscrollend="selectByScrollPos"
       @mousewheel="mousewheelTriggered"
     >
       <li v-for="i in 3" :key="name + '-before-' + i"></li>
@@ -54,7 +54,11 @@ export default {
       type: String,
       default: "value"
     },
-    dropdownVisible: Boolean
+    dropdownVisible: Boolean,
+    dragscrollEnabled: {
+      type: Boolean,
+      default: true
+    }
   },
   data() {
     return {
@@ -70,18 +74,19 @@ export default {
       clickActive: false,
       initialize: true,
       itemHeight: 35.703,
-      dragscrollSupported: isMobile ? false : true
+      isMobile: false
     };
   },
   mounted() {
     var self = this;
+    self.isMobile = isMobile;
     // Polyfill for IE9
     // this.$refs.list.addEventListener("wheel", function() {
     //   self.mousewheelTriggered();
     // });
   },
   watch: {
-    dropdownVisible: function(newval, oldval) {
+    dropdownVisible: function(newval) {
       if (newval && this.initialize) {
         this.scrollToElementAt(this.startingAt);
       } else if (newval && this.selectedItem && this.selectedItemIndex) {
@@ -97,7 +102,6 @@ export default {
     selectByScrollPos: function() {
       var self = this;
       var list = self.$refs.list;
-      var items = document.querySelectorAll("#" + list.id + " .item");
       var fromTop = list.scrollTop + self.itemHeight / 2;
       var itemId = Math.floor(fromTop / self.itemHeight);
       var item = self.items[itemId];
@@ -108,7 +112,7 @@ export default {
       this.clickActive = true;
       this.select(item, i, $event);
     },
-    select: function(item, i, $event) {
+    select: function(item, i) {
       var self = this;
       // Reset everything
       self.resetTimeout();
@@ -155,7 +159,7 @@ export default {
     getIdForElementAt: function(at) {
       return "#" + this.name + "-" + at;
     },
-    scrolled($evt) {
+    scrolled() {
       var self = this;
       self.resetTimeout();
       if (!self.selectionActive)
@@ -164,7 +168,7 @@ export default {
           if (self.initialize) self.initialize = !self.initialize;
         }, 150);
     },
-    onDragscrollMove(evt) {
+    onDragscrollMove() {
       this.dragscrollActive = true;
     },
     clearScrollCancel() {
