@@ -1,6 +1,7 @@
 {
   "name": "vue-date-select",
   "version": "0.1.0",
+  "description": "Vue component for date selection",
   "main": "dist/vue-date-select.umd.js",
   "module": "dist/vue-date-select.es.js",
   "unpkg": "dist/vue-date-select.min.js",
@@ -64,5 +65,18 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrielBuragev/vue-date-select.git"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "date-select",
+    "date",
+    "select",
+    "date-picker",
+    "picker"
   ]
 }
