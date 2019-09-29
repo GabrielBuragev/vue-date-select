@@ -1,5 +1,7 @@
 
-# vue-dateselect
+# [vue-dateselect](https://github.com/GabrielBuragev/vue-date-select)
+
+## Jump on the github link to check out the demo :)
 
 ![Vue Dateselect Demo](demo/demo.gif)
 

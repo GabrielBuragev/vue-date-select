@@ -1,6 +1,6 @@
 {
   "name": "vue-date-select",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Vue component for date selection",
   "main": "dist/vue-date-select.umd.js",
   "module": "dist/vue-date-select.es.js",
