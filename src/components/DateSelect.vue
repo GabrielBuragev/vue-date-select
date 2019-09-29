@@ -1,5 +1,12 @@
 <template>
-  <div id="datepicker-wrapper" class="datepicker-wrapper" style="position:relative;">
+  <div
+    id="datepicker-wrapper"
+    class="datepicker-wrapper"
+    style="position:relative;"
+    tabindex="-1"
+    @focusout="focusOut"
+    ref="datepickerWrapper"
+  >
     <div class="datepicker-inner row">
       <div class="datepicker-input-wrapper" :class="(dropdownVisible)? 'open' : 'closed'">
         <div
@@ -127,8 +134,26 @@ export default {
     toggleDropdownVisible() {
       this.dropdownVisible = !this.dropdownVisible;
     },
-    datepickerFocused: function() {
+    close() {
+      this.dropdownVisible = false;
+    },
+    datepickerFocused() {
       this.dropdownVisible = true;
+    },
+    isDescendant(parent, child) {
+      var node = child.parentNode;
+      while (node != null) {
+        if (node == parent) {
+          return true;
+        }
+        node = node.parentNode;
+      }
+      return false;
+    },
+    focusOut(e) {
+      if (!e.relatedTarget) return this.close();
+      else if (this.isDescendant(this.$refs.datepickerWrapper, e.relatedTarget))
+        return false;
     }
   },
   computed: {

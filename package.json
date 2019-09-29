@@ -2,9 +2,9 @@
   "name": "vue-dateselect-v2",
   "version": "0.1.0",
   "private": true,
-  "main": "dist/my-component.umd.js",
-  "module": "dist/my-component.es.js",
-  "unpkg": "dist/my-component.min.js",
+  "main": "dist/vue-dateselect.umd.js",
+  "module": "dist/vue-dateselect.es.js",
+  "unpkg": "dist/vue-dateselect.min.js",
   "browser": {
     "./sfc": "src/components/DateSelect.vue"
   },
@@ -34,9 +34,10 @@
     "rollup-plugin-livereload": "^1.0.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-scss": "^1.0.2",
     "rollup-plugin-serve": "^1.0.1",
-    "rollup-plugin-vue": "^5.0.1",
+    "rollup-plugin-vue2": "^0.8.1",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
   },

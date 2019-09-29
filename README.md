@@ -1,5 +1,8 @@
 # vue-dateselect-v2
 
+![Vue Dateselect Demo](demo/demo.gif)
+
+
 ## Project setup
 ```
 yarn install

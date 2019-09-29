@@ -4,19 +4,18 @@ import livereload from 'rollup-plugin-livereload';
 import minify from 'rollup-plugin-babel-minify';
 import resolve from 'rollup-plugin-node-resolve';
 import serve from 'rollup-plugin-serve';
-import vue from 'rollup-plugin-vue';
-import scss from 'rollup-plugin-scss';
+import vue from 'rollup-plugin-vue2';
+import sass from 'rollup-plugin-sass';
 
 const LIBRARY_NAME = 'VueDateselect';
 const FILE_NAME = 'vue-dateselect';
 
 const sourcemap = true;
 const plugins = [
-    vue({
-        css: `dist/${FILE_NAME}.css`,
-        compileTemplate: true, // Explicitly convert template to render function
+    vue(),
+    sass({
+        output: `dist/${FILE_NAME}.css`,
     }),
-    scss(),
     resolve({
         browser: true
     }),
