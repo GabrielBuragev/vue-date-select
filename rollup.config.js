@@ -5,16 +5,17 @@ import minify from 'rollup-plugin-babel-minify';
 import resolve from 'rollup-plugin-node-resolve';
 import serve from 'rollup-plugin-serve';
 import vue from 'rollup-plugin-vue2';
-import sass from 'rollup-plugin-sass';
+import postcss from 'rollup-plugin-postcss'
 
-const LIBRARY_NAME = 'VueDateselect';
-const FILE_NAME = 'vue-dateselect';
+const LIBRARY_NAME = 'VueDateSelect';
+const FILE_NAME = 'vue-date-select';
 
 const sourcemap = true;
 const plugins = [
     vue(),
-    sass({
-        output: `dist/${FILE_NAME}.css`,
+    postcss({
+        extensions: ['.scss'],
+        namedExports: true
     }),
     resolve({
         browser: true

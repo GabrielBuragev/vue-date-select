@@ -1,16 +1,16 @@
 {
-  "name": "vue-dateselect-v2",
+  "name": "vue-date-select",
   "version": "0.1.0",
   "private": true,
-  "main": "dist/vue-dateselect.umd.js",
-  "module": "dist/vue-dateselect.es.js",
-  "unpkg": "dist/vue-dateselect.min.js",
+  "main": "dist/vue-date-select.umd.js",
+  "module": "dist/vue-date-select.es.js",
+  "unpkg": "dist/vue-date-select.min.js",
   "browser": {
     "./sfc": "src/components/DateSelect.vue"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "rollup -c",
+    "build": "NODE_ENV=production rollup -c",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -27,10 +27,12 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.12.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-babel-minify": "^9.1.0",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-css": "^1.0.10",
+    "rollup-plugin-css-only": "^1.0.0",
     "rollup-plugin-livereload": "^1.0.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",

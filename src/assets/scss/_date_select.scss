@@ -1,6 +1,6 @@
 .datepicker-wrapper {
   outline:none;
-  
+  border:1px solid black;
   &,
   .datepicker-inner,
   .datepicker-input-wrapper,
@@ -22,6 +22,8 @@
       transition: transform 0.1s linear;
     }
     #datepicker{
+      padding-top:10px;
+      padding-bottom:10px;
       display: flex;
       align-items: center;
       justify-content: center;

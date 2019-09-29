@@ -157,12 +157,6 @@ export default {
     }
   },
   computed: {
-    payload() {
-      return {
-        ...this.localSelection,
-        text: datepickerValue
-      };
-    },
     yearsComputed: function() {
       var arr = [];
       let low = this.yearRange[0],

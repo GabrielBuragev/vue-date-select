@@ -42,7 +42,7 @@ export default {
 html {
   background-color: gray;
 }
-.datepicker-wrapper {
+/* .datepicker-wrapper {
   width: 50%;
   margin-left: 25%;
 }
@@ -50,5 +50,5 @@ html {
   padding: 15px 5px 15px 5px;
   border: 1px solid black;
   margin: 0;
-}
+} */
 </style>

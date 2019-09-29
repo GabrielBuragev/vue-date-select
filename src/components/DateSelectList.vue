@@ -14,7 +14,7 @@
       @dragscrollend="selectByScrollPos"
       @mousewheel="mousewheelTriggered"
     >
-      <li v-for="i in 3" :key="name + '-before-' + i"></li>
+      <li v-for="i in 3" :key="name + '-before-' + i" @mousedown.prevent.stop></li>
       <li
         v-for="(item,i) in items"
         :key="name + '-' + i"
@@ -26,7 +26,7 @@
       >
         <span>{{item}}</span>
       </li>
-      <li v-for="i in 3" :key="name + '-after-' + i"></li>
+      <li v-for="i in 3" :key="name + '-after-' + i" @mousedown.prevent.stop></li>
     </ul>
   </div>
 </template>
@@ -44,7 +44,7 @@ export default {
     startingAt: Number,
     items: {
       type: Array,
-      default: []
+      default: () => []
     },
     value: {
       type: [String, Number],
