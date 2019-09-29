@@ -1,7 +1,6 @@
 {
   "name": "vue-date-select",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/vue-date-select.umd.js",
   "module": "dist/vue-date-select.es.js",
   "unpkg": "dist/vue-date-select.min.js",
